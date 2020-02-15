@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo:400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
+
+$font-roboto:'Roboto';
+$font-arvo: 'Arvo';
+$verde-oscuro:#0e4221;
+$verde-claro:#6c9a06;
+$gris-oscuro:#9C9E9F;
+$gris-claro:#C8C8C8;
+$blanco: #f5f5f5;
+
+@mixin transition {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.title{
+  font-size: 5.5vmin;
+  text-align: center;
+  color:$blanco;
+  letter-spacing: 0.23rem;
+  background: $gris-oscuro;
+  font-weight: 600;
+  text-shadow: 0.2rem 0.2rem 0.2rem #070707;
+}
+
+.extensionCourse-card {
+    background-color: $blanco;
+    border-radius: 0.3rem;
+    box-shadow: -0.5rem 0.5rem 0.75rem $verde-oscuro;
+    width: 95%;
+    height: 250px;
+    margin: 0.3rem 0.3rem;
+    border:0.3rem;
+    padding: 0 0 0 0;
+    flex-direction: column;
+    font-family: "Arvo", serif;
+    line-height: 1.1;
+    border-right: 0.04rem solid black;
+    
+    &__name {
+      color:$blanco;
+      width: 100%;
+      height: 130px;  //
+      background: $verde-oscuro;
+      border-radius: 0.3rem 0.3rem 0 0;
+      border: $verde-oscuro;
+      padding: 0.6rem 0.4rem 0.6rem 0.4rem;
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      text-shadow: 0.07rem 0.07rem 0.07rem black;
+    }
+    &__info{
+      width: 100%;
+      padding: 0.8rem 0.8rem 0.5rem 0.8rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      color: black;
+      text-decoration: none;
+    }
+    &__title {
+      text-align: center;
+    }
+    &__more-info{
+      font-size: 0.75rem;
+      margin-top: 0.8rem;
+      text-align: justify;
+    }
+    &__tab{
+      padding: 0 0 0.1rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+    }       
+  }
+  
+  .far{
+    font-size: 0.8rem;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+
+  .extensionCourse-card:hover {
+    @include transition;
+    box-shadow: -0.5rem 0.5rem 0.75rem $verde-claro;
+    .extensionCourse-card__name{
+      background: $verde-claro;
+    }
+  }
+
+  //576px
+  //@include media-breakpoint-up(sm) { 
+  @media (min-width: 576px){
+    .title{
+      font-size: 5vmin;
+    } 
+    .extensionCourse-card{    
+        width: 75%;
+        height: 270px;
+      &__title{
+        font-size: 1.05rem;
+      }
+      &__more-info{
+        font-size: 0.9rem;
+      }
+    } 
+  }
+  //768px
+  //@include media-breakpoint-up(md) { 
+  @media (min-width: 768px){
+    .title{
+      font-size: 6.2vmin;
+    }
+    .extensionCourse-card{  
+      height: 280px;  
+      width: 45%;
+      margin: 1rem;
+      &__name{
+        font-size: 1.1rem;
+        height: 220px;
+      }
+      &__title{
+        font-size: 1rem;
+      }
+      &__more-info{
+        font-size: 0.9rem;
+      }
+    } 
+  }
+  //992px
+  //@include media-breakpoint-up(lg) { 
+    @media (min-width: 992px){ 
+    .extensionCourse-card{    
+      width: 45%;
+      height: 282px;
+      &__name{
+        font-size: 1.2rem;
+        height: 200px;
+      }
+      &__more-info{
+        font-size: 0.97rem;
+      }
+    }
+  }
+  //1200px
+  //@include media-breakpoint-up(xl) { 
+    @media (min-width: 1200px){  
+    .extensionCourse-card{    
+      width: 20%;
+      height: 400px;
+      &__name{
+        font-size: 1.3rem;
+      }
+      &__title{
+        font-size: 1.1rem;
+      }
+      &__more-info{
+        font-size: 1rem;
+      }
+    }
+    
+  }
+
+  @media (min-width: 1500px){
+    .extensionCourse-card{    
+      width: 30%;
+      height: 400px;
+      &__info{
+        padding: 0.8rem 0.8rem 0.5rem 0.8rem;
+      }
+      &__name{
+        padding: 1rem 0.5rem 0.5rem 0.8rem;
+        height: 210px;
+        font-size: 1.3rem;
+      }
+      &__more-info{
+        font-size: 1rem;
+      }
+    }
+  }

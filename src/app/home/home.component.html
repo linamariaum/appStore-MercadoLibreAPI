@@ -1,0 +1,39 @@
+<div class="pages">
+  <div class="banner">
+    <img [src]="imgPath" class="mw-100" style="width: 100%;">
+  </div>
+  <div>
+    <h3 class="title">Búsqueda</h3>
+    <br>
+    <div class="container">
+      <input #articulo type="text" placeholder="Artículo" (keyup.enter)="buscar(articulo.value) "class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <br>
+      <button class="btn btn-success btn-lg btn-block" (click)="buscar(articulo.value)">Buscar</button>
+    </div>
+    <br><br>
+    <h6 *ngIf="message"> No se pudo acceder a la base de datos.</h6>
+    <div class="row justify-content-center">
+      <div *ngFor="let item of articulos" class="card extensionCourse-card">
+        <a href="{{item.permalink}}" target="_blank" rel="noopener noreferrer">
+        <div class="extensionCourse-card__name">
+          <img src="{{item.thumbnail}}">
+        </div>
+        <div class="extensionCourse-card__info">
+          <div class="extensionCourse-card__title">{{item.title}}</div>
+          <div class="extensionCourse-card__more-info"><i class="far fa-clock"></i><b> Vendedor:
+            </b>{{item.seller.id}}</div>
+          <div class="extensionCourse-card__more-info"><i class="fas fa-hand-holding-usd"></i><b> Costo: </b>
+            <div class="extensionCourse-card__tab">{{item.price}}</div>
+          </div>
+          <div class="extensionCourse-card__more-info"><i class="fas fa-link"></i><a href="{{item.permalink}}"
+              target="_blank"> Click para más información</a></div>
+        </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container">
+    <br>
+    <button class="btn btn-success btn-block" (click)="siguiente()">Siguiente</button>
+  </div> -->
+</div>
