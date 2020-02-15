@@ -46,6 +46,10 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  siguiente(){
+    
+  }
+
   // tslint:disable-next-line: ban-types
   formatPrice(cost: Number): String {
     let end = '';
